@@ -13,7 +13,7 @@ Welcome to the bot setup guide! Follow the steps below to install and configure 
 3. [Configuration Files](#configuration-files)
    - [`configs.json`](#1-configsjson)
    - [`datas.txt`](#2-datastxt)
-   - [`wallets.txt`](#3-walletstxt)
+   - [`privateKeys.txt`](#3-privateKeystxt)
    - [`proxies.txt`](#4-proxiestxt)
 4. [Running the Bot](#running-the-bot)
 5. [Contact and Support](#contact-and-support)
@@ -63,12 +63,14 @@ This file controls the bot’s behavior. Below is an example configuration:
   "rotateProxy": false,
   "skipInvalidProxy": false,
   "proxyRotationInterval": 2,
-  "delayEachAccount": [5, 8],
+  "delayEachAccount": [1, 1],
   "timeToRestartAllAccounts": 300,
-  "howManyAccountsRunInOneTime": 100,
+  "howManyAccountsRunInOneTime": 10,
   "doTasks": true,
-  "referralCode": "6M2TG"
+  "referralCode": "6M2TG",
+  "webReferralCode": "2KKV3"
 }
+
 ```
 
 - **Fields Explained:**
@@ -81,6 +83,7 @@ This file controls the bot’s behavior. Below is an example configuration:
   - `howManyAccountsRunInOneTime`: Number of accounts to run simultaneously.
   - `doTasks`: Enable task completion.
   - `referralCode`: Add your referral code (optional). Do not change it if you want to support me ^^
+  - `webReferralCode`: Add your referral code (optional). Do not change it if you want to support me ^^
 
 ### 2. `datas.txt` - 🗂️ User Data
 
@@ -94,15 +97,16 @@ query_id.../user...
 
 _Note: Each row for each account_
 
-### 3. `wallets.txt` - 💼 Wallet Addresses
+### 3. `privateKeys.txt` - 💼 Wallet Addresses
 
 - Wallets generator: [Link](https://github.com/MeoMunDep/Automatic-Ultimate-Create-Wallets-for-Airdrop)
 - Add your wallet addresses in the following format:
+- EVM Privatekey.
 
 ```txt
-abc...xyz
-abc...xyz
-abc...xyz
+privatekey
+privatekey
+privatekey
 ```
 
 _Note: Wallet updates are currently not supported._
@@ -132,14 +136,20 @@ _Note: each row for each account_
 
 2. Run the bot using the following command:
    ```bash
-   node meomundep.js
+   node telegram_meomundep.js
+   ```
+
+   or
+
+   ```bash
+   node web_meomundep.js
    ```
 
 ---
 
 ## Contact and Support
 
-- **Help me with your referral** [Referral Link](https://t.me/takerprotocol_bot/explorer?startapp=6M2TG)
+- **Help me with your referral** [Referral Link](https://t.me/takerprotocol_bot/explorer?startapp=6M2TG) | [Web referral](https://earn.taker.xyz/?start=2KKV3)
 - **Buy me a telegram account** [Here](https://t.me/KeoAirDropFreeNe/312/27801) or [Here](https://github.com/MeoMunDep/MeoMunDep)
 
 If you encounter any issues or have questions, feel free to reach out:
